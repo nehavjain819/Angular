@@ -11,5 +11,6 @@ export class Employee {
     LastName: string = 'Jain';
     Age: Number = 23;
     Gender: string = 'female';
+    Work:string='student';
 
 }
