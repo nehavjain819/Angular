@@ -12,13 +12,19 @@ var Employee = (function () {
         this.LastName = 'Jain';
         this.Age = 23;
         this.Gender = 'female';
+        this.Work = 'student';
+        this.isdisabled = true;
+        this.colspans = 2;
+        this.moreclassapply = 'italicclass boldclass';
+        this.isboldclassapply = false;
     }
     return Employee;
 }());
 Employee = __decorate([
     core_1.Component({
         selector: 'employee',
-        templateUrl: 'app/Employee/employee.html'
+        templateUrl: 'app/Employee/employee.html',
+        styleUrls: ['app/Employee/employee.css']
     })
 ], Employee);
 exports.Employee = Employee;

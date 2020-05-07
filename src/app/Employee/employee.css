@@ -1,0 +1,15 @@
+table{
+    font-family:Arial;
+    border-collapse:collapse;
+    font-size:larger; 
+    border: 1px solid grey;
+}
+td{
+    border:1px solid gray;
+}
+.italicclass{
+    font-style: italic;
+}
+.boldclass{
+    font-size: large;
+}
