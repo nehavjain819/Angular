@@ -17,7 +17,17 @@ var Employee = (function () {
         this.colspans = 2;
         this.moreclassapply = 'italicclass boldclass';
         this.isboldclassapply = false;
+        this.isbold = true;
+        this.fontsize = 30;
     }
+    // if want to bind more than one style in ts file then use function
+    Employee.prototype.addstyle = function () {
+        var styles = {
+            'font-size': this.fontsize,
+            'font-weight': this.isbold ? 'bold' : 'normal',
+        };
+        return styles;
+    };
     return Employee;
 }());
 Employee = __decorate([
