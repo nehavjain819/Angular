@@ -9,6 +9,7 @@ var core_1 = require("@angular/core");
 var Employee = (function () {
     function Employee() {
         this.FirstName = 'Neha';
+        this.name = 'Raunak';
         this.LastName = 'Jain';
         this.Age = 23;
         this.Gender = 'female';
@@ -19,14 +20,21 @@ var Employee = (function () {
         this.isboldclassapply = false;
         this.isbold = true;
         this.fontsize = 30;
+        this.toggle = false;
     }
     // if want to bind more than one style in ts file then use function
     Employee.prototype.addstyle = function () {
         var styles = {
-            'font-size': this.fontsize,
+            'font-size.px': this.fontsize,
             'font-weight': this.isbold ? 'bold' : 'normal',
         };
         return styles;
+    };
+    Employee.prototype.onclick = function () {
+        console.log("button click method works");
+    };
+    Employee.prototype.ToggleMethod = function () {
+        this.toggle = !this.toggle;
     };
     return Employee;
 }());

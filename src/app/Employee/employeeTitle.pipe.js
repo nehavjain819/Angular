@@ -6,17 +6,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.name = 'Employee Detail';
+var EmployeeTitlePipe = (function () {
+    function EmployeeTitlePipe() {
     }
-    return AppComponent;
+    EmployeeTitlePipe.prototype.transform = function (value, gender) {
+        if (gender.toLowerCase() == 'male') {
+            return 'MR.' + value;
+        }
+        else {
+            return 'MISS.' + value;
+        }
+    };
+    return EmployeeTitlePipe;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'my-app',
-        template: "\n        <employee-list></employee-list>\n        ",
+EmployeeTitlePipe = __decorate([
+    core_1.Pipe({
+        name: 'employeetitle'
     })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], EmployeeTitlePipe);
+exports.EmployeeTitlePipe = EmployeeTitlePipe;
+//# sourceMappingURL=employeeTitle.pipe.js.map

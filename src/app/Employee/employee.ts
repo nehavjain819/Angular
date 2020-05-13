@@ -1,4 +1,5 @@
 ﻿import { Component } from '@angular/core'
+import { Stream } from 'stream';
 
 @Component({
     selector: 'employee',
@@ -9,6 +10,7 @@
 
 export class Employee {
     FirstName: string = 'Neha';
+    name:String = 'Raunak';
     LastName: string = 'Jain';
     Age: Number = 23;
     Gender: string = 'female';
@@ -19,12 +21,19 @@ export class Employee {
     isboldclassapply: boolean = false;
     isbold: boolean = true;
     fontsize:number = 30;
+    toggle : boolean= false;
     // if want to bind more than one style in ts file then use function
     addstyle() {
         let styles = {
-            'font-size' : this.fontsize,
+            'font-size.px' : this.fontsize,
             'font-weight' : this.isbold ? 'bold' : 'normal',
         }
         return styles;
+    }
+    onclick(){
+        console.log("button click method works")
+    }
+    ToggleMethod(){
+        this.toggle=!this.toggle;
     }
 }

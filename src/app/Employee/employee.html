@@ -26,7 +26,7 @@
             {{Age}}
         </td>
     </tr>
-    <tr>
+    <tr *ngIf = 'this.toggle'>
         <td>
             Gender
         </td>
@@ -34,25 +34,42 @@
             {{Gender}}
         </td>
     </tr>
-    <tr>
+    <tr *ngIf = 'this.toggle'>
         <td>Work</td>
         <td>{{Work}}</td>
     </tr>
 </table>
+<br>
+
+<button (click)='ToggleMethod()'> 
+    {{this.toggle ? 'Hide Details': 'Show Details'}} </button>
+
+<br>
 <button [disabled] = 'isdisabled'>Click me</button>
+<br>
 <button disabled = '{{isdisabled}}'> Click me</button>
+<br>
 <div>
     <input type="text" value="Neha" id="input1">
+    <input [value] ='name' (input)='name = $event.target.value'>
+    <input [(ngModel)] = 'name'>
+    {{name}}
 </div>
 
 
 <h6 [class] = 'moreclassapply'>
     If want to apply more than one class then add attribute in ts file assign classes and bind with class attribute
 </h6>
+<br>
 <h6 class="italicclass" [class.boldclass] = 'isboldclassapply'>
     If want to apply more than one class then add attribute in ts file assign classes and bind with class attribute
 
 </h6>
+<br>
 <button [style.font-weight] = "isbold ? 'bold' : 'null'">MY BUTTON</button>
+<br>
 <button [ngStyle] = 'addstyle()'>MY BUTTON</button>
+<br>
+<button (click) = 'onclick()'> 
+Click Me </button>
 

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <div style="margin-bottom: 10px;">
+        <employeeCount [all]="gettotalnumberEmployee()" [male]="getmaleEmployeeCount()"
+            [female]="getfemaleEmployeeCount()" (changedSelectionRadiobutton)=OnradiobuttonChangeview($event)>
+        </employeeCount>
+    </div>
+    <table>
+
+        <thead>
+            <th>
+                Code
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Job
+            </th>
+            <th>
+                ID
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Gender
+            </th>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let Employees of EmployeeDetails; trackBy: trackEmployeDetails">
+                <tr  *ngIf="this.selectedGendervalue == 'all' || 
+                    this.selectedGendervalue == Employees.gender">
+                    <td>
+                        {{Employees.code | uppercase}}
+
+                    </td>
+                    <td>
+                        {{Employees.name | uppercase | employeetitle: Employees.gender}}
+                    </td>
+                    <td>
+                        {{Employees.job}}
+                    </td>
+                    <td>
+                        {{Employees.ID}}
+                    </td>
+                    <td>
+                        {{Employees.date | uppercase | date:'dd/MM/yyyy'}}
+                    </td>
+                    <td>
+                        {{Employees.gender}}
+                    </td>
+                </tr>
+            </ng-container>
+            <tr *ngIf="!EmployeeDetails || EmployeeDetails.length == 0">
+                <td colspan="5">No record to display</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <button (click)="getlist()"> Refresh Employee</button>
+
+
+</body>
+
+</html>
